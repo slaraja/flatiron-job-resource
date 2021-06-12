@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
   #don't need a post signup because resources has it covered, and users don't see the URL
   resources :comments
