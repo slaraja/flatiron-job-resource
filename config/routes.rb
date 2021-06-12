@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   get '/' => 'sessions#index'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/signup' => 'users#new'
+  #don't need a post signup because resources has it covered, and users don't see the URL
   resources :comments
   resources :jobs
   resources :companies
