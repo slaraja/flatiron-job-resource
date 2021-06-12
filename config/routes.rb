@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => 'sessions#index'
   resources :comments
   resources :jobs
   resources :companies
