@@ -1,1 +1,18 @@
-<h1>Welcome to the sign up page new.html.erb</h1>
+<h1>Sign Up Page</h1>
+<h2>Please enter your information below to sign up.</h2>
+
+<%= form_for(@user) do |f|%>
+  <%= f.label :firstname %>
+  <%= f.text_field :username %>
+  
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Sign Up" %>
+<% end %>
