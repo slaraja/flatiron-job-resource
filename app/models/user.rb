@@ -5,4 +5,7 @@ class User < ApplicationRecord
     has_many :jobs #that are created by user
 
     has_secure_password
+    #gives .authenticate method
+    #validates password true
+
 end
