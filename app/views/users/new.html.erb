@@ -2,17 +2,39 @@
 <h2>Please enter your information below to sign up.</h2>
 
 <%= form_for(@user) do |f|%>
-  <%= f.label :firstname %>
-  <%= f.text_field :username %>
   
   <%= f.label :username %>
   <%= f.text_field :username %>
-
+  <br>
+  <br>
   <%= f.label :email %>
   <%= f.text_field :email %>
-
+  <br>
+  <br>
   <%= f.label :password %>
   <%= f.password_field :password %>
-
+  <br>
+  <br>
+  <%= f.label :first_name %>
+  <%= f.text_field :username %>
+  <br>
+  <br>
+  <%= f.label :last_name %>
+  <%= f.text_field :username %>
+  <br>
+  <br>
+  <%= f.label :LinkedIn_profile %>
+  <%= f.text_field :linkedin_profile %>
+  <br>
+  <br>
+  <%= f.label :grad_date %>
+  <%= f.text_field :grad_date %>
+  <br>
+  <br>
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+  <br>
+  <br>
   <%= f.submit "Sign Up" %>
 <% end %>
+
