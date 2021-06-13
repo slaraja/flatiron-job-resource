@@ -10,14 +10,16 @@ class SessionsController < ApplicationController
 
     def create
         #does the user exist in the system
-        @user = User.find_by(username: params[:user][:username])
+        @user = User.find_by(username: params[:username])
         #did we find the user and did they enter the correct password?
-        if @user.try(.authenticate, params[:user][:username])
-            session[:user_id] = @user.user.id
-            redirect_to user_path(@user)
+        if @user.try(:authenticate, params[:password])
+        # if object != nil then object.some_method else nil end
         #if no user, it will return nill. if they have a user, then it will authenticate
+            session[:user_id] = @user.id
+            #set the user id in the session
+            redirect_to user_path(@user)
         else
-            flash[:error] = "Sorry, please try again. Your login details were not correct."  
+            flash[:alert] = "Sorry, please try again. Your login details were not correct."  
             redirect_to login_path
         end
     end
