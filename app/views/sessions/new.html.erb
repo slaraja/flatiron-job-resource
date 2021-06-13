@@ -1,6 +1,8 @@
 <h1>Login Page</h1>
 <h2>Please enter your Username and Password below to login.</h2>
 
+<p><%= flash[:error]%>
+
 <%= form_for(:user) do |f| %>
   
   <%= f.label :username %>

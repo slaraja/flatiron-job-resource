@@ -11,6 +11,7 @@ class UsersController < ApplicationController
             redirect_to user_path(@user)
         else 
             render :show
+            #render :new - show the form
         end
     end
 
