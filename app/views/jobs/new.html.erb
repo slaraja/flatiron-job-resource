@@ -1,39 +1,22 @@
 <h1> Add a Job </h1>
+<h2> Add details about a job. </h2>
+
 
 <%= form_for(@job) do |f| %>
-
-    t.string "level"
-    t.string "link"
-    t.integer "company_id", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["company_id"], name: "index_jobs_on_company_id"
-    t.index ["user_id"], name: "index_jobs_on_user_id"
+    <p> Select a company from the list. </p>
+  <div>
+  <%= f.collection_select :company_id, Company.all, :id, :name %>
+   <br>
+  <br>
+    <div>
   
   <%= f.label :level %>
   <%= f.text_field :level %>
   <br>
   <br>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
+  <%= f.label :link %>
+  <%= f.text_field :link %>
   <br>
   <br>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <br>
-  <br>
-  <%= f.label :LinkedIn_profile %>
-  <%= f.text_field :linkedin_profile %>
-  <br>
-  <br>
-  <%= f.label :grad_date %>
-  <%= f.text_field :grad_date %>
-  <br>
-  <br>
-  <%= f.label :status %>
-  <%= f.text_field :status %>
-  <br>
-  <br>
-  <%= f.submit "Sign Up" %>
+  <%= f.submit "Add a Job" %>
 <% end %>
