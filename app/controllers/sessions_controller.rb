@@ -17,13 +17,12 @@ class SessionsController < ApplicationController
             #set the user id in the session
             redirect_to user_path(@user)
         else
+            flash[:alert] = "Please try again. Your login details are incorrect."
             redirect_to login_path
         end
     end
     
     def destroy
-        # byebug
-        #reset_session
         session.delete(:user_id)
         redirect_to '/'
     end
