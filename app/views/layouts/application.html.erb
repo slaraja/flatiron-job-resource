@@ -10,13 +10,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <div>
-    <%= button_to "Log Out", logout_path, method: :delete if session[:user_id].present? %>
-    <%= link_to "Add a Job", new_job_path %>
-
-  <div>
 
   <body>
     <%= yield %>
   </body>
+
+  <div>
+    <h2> Menu <h2>
+    <%= link_to "Add a Job", new_job_path if session[:user_id].present? %>
+    <br>
+    <br> 
+    <%= link_to "Log Out", logout_path, method: :delete if session[:user_id].present? %>
+  <div>
+
 </html>
