@@ -1,6 +1,4 @@
 <h1> Add a Job </h1>
-<h2> Add details about a job below. </h2>
-
 
 <%= form_for(@job) do |f| %>
     <p> Select a company from the list. </p>
@@ -9,7 +7,11 @@
    <br>
   <br>
     <div>
-  
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <br>
   <%= f.label :level %>
   <%= f.text_field :level %>
   <br>
