@@ -4,8 +4,8 @@ class User < ApplicationRecord
     #"job" above matches belongs_to :job in comments model
     has_many :jobs #that are created by user
 
-    validates :username, :email, presence: true    
-    validates :username,, uniqueness: true
+    validates :username, uniqueness: true,  presence: true
+    validates :email, presence: true
     #do not need to validate password b/c it's included in secure password
 
     has_secure_password
