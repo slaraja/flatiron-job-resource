@@ -1,6 +1,20 @@
 <h1> Add a Job </h1>
 
 <%= form_for(@job) do |f| %>
+
+ <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <br>
+  <%= f.label :level %>
+  <%= f.text_field :level %>
+  <br>
+  <br>
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+  <br>
+  <br>
+
     <p> Select a company from the list, or skip to the next section to add a new company. </p>
   <div>
   <%= f.collection_select :company_id, Company.all, :id, :name %>
@@ -17,26 +31,9 @@
     <br>
     <%= attributes.label :location %>
     <%= attributes.text_field :location %>
-    <br>
-    <br>
-    <%= attributes.submit "Add a Company" %>
-    <br>
 <% end %>
-   <br>
+    <br>
+    <br>
+<%= f.submit "Add a Job" %>
 
-    <div>
-
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <br>
-  <%= f.label :level %>
-  <%= f.text_field :level %>
-  <br>
-  <br>
-  <%= f.label :link %>
-  <%= f.text_field :link %>
-  <br>
-  <br>
-  <%= f.submit "Add a Job" %>
 <% end %>
