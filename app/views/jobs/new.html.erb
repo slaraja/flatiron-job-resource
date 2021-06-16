@@ -24,7 +24,7 @@
 
     <p> If you do not see the company on the dropdown list above, add a new company here. </p>
   <div>
-  <%= f.fields_for(:company) do |attributes| %>
+  <%= f.fields_for :company do |attributes| %>
     <%= attributes.label :name %>
     <%= attributes.text_field :name %>
     <br>

@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-
     
     def new
        @job = Job.new 
@@ -12,18 +11,19 @@ class JobsController < ApplicationController
         @job.user_id = session[:user_id] #refactor
         #if it reloads, we want it to re-render the information that has been added so far
         if @job.save
-            session[:user_id] = @job.id
-            # redirect_to job_path(@job)
+            # session[:user_id] = @job.id
+            #don't need to store the job id in the session
+            redirect_to job_path(@job)
         else           
             render :new
         end
     end
 
-
     private
 
     def job_params
         params.require(:job).permit(:title, :level, :link, :company_id, company_attributes: [:name, :location])
+        #company_attributes comes from accepts_nested_attributes in model
     end
 
 end
