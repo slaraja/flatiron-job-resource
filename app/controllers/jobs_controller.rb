@@ -1,6 +1,9 @@
 class JobsController < ApplicationController
     
-    
+    def index
+        @jobs = Job.all
+    end
+
     def new
        @job = Job.new 
        @job.build_company #flipped because it's a belongs to

@@ -17,6 +17,9 @@
 
   <div>
     <h2> Menu <h2>
+    <%= link_to "See Job List", jobs_path if session[:user_id].present? %>
+    <br>
+    <br>
     <%= link_to "Add a Job", new_job_path if session[:user_id].present? %>
     <br>
     <br> 
