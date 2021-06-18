@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   
  
   resources :comments
-  resources :jobs, only: [:show] do
+  resources :jobs
+  resources :jobs do
     # nested resource for jobs
     resources :comments, only: [:new, :index]
   end
