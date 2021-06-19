@@ -1,9 +1,10 @@
 <h1> Comments New Page </h1>
 
+
 <%= form_for(@comment) do |f| %>
 
   <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.text_area :content %>
   <br>
   <br>
   <%= f.hidden_field :job_id %>
@@ -12,4 +13,3 @@
   <%= f.submit "Add a Comment" %>
 
 <% end %>
-
