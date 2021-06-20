@@ -5,4 +5,7 @@ class Job < ApplicationRecord
   has_many :users, through: :comments
   accepts_nested_attributes_for :company
 
+  validates :link, presence: true
+
+
 end
