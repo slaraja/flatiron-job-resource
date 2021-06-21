@@ -1,5 +1,11 @@
 <h1> Jobs List </h1>
 
 <% @jobs.each do |job| %> 
-<%= job.title %><br>
+<%= link_to job.title, job_path(job.id) %><br>
+
 <% end %>
+
+
+
+
+
