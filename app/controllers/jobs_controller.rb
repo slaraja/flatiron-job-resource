@@ -25,6 +25,8 @@ class JobsController < ApplicationController
 
     def show
         @job = Job.find_by_id(params[:id])
+        #redirect to somewhere else if someone types something else into URL
+        #  redirect_to '/' if !@user
     end
 
 
