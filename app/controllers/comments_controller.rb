@@ -9,6 +9,10 @@ class CommentsController < ApplicationController
           end
     end
 
+    def create
+      
+    end
+
     def index
         
     end
