@@ -6,7 +6,13 @@ class CompaniesController < ApplicationController
     end
 
     def show
-        
+        @company = Company.find_by_id(params[:id])
+    end
+
+    private
+
+    def company_params
+        params.require(:company).permit(:name, :location)
     end
 
 end
