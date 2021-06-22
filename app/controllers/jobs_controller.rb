@@ -29,6 +29,18 @@ class JobsController < ApplicationController
         #  redirect_to '/' if !@user
     end
 
+    def edit
+       redirect_if_not_logged_in 
+       #find the job by id
+       @job = Job.find_by_id(params[:id])
+        #if current user is the owner, then edit the job
+        if @job.save
+            redirect_to job_path(@job)
+        else           
+            render :new
+        end
+    end
+
 
     private
 
