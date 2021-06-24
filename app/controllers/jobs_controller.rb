@@ -58,7 +58,7 @@ class JobsController < ApplicationController
     def destroy
         Job.find_by_id(params[:id]).destroy
         redirect_to jobs_path
-      end
+    end
      
 
     private
