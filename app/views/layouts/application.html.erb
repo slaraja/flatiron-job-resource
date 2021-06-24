@@ -15,9 +15,7 @@
     <%= yield %>
   </body>
 
-  <div>
-    <h2> Menu <h2>
- 
+  <div> 
     <%= link_to "See Job List", jobs_path if session[:user_id].present? %>
     <br>
     <br>
