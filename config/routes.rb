@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
+  delete '/jobs' => 'jobs#destroy'
   #don't need a post signup because resources has it covered, and users don't see the URL
   
  
