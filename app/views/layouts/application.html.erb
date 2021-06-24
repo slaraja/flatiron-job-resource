@@ -16,7 +16,7 @@
   </body>
 
   <div> 
-    <%= link_to "See Job List", jobs_path if session[:user_id].present? %>
+    <%= link_to "See Job List and Modify Jobs", jobs_path if session[:user_id].present? %>
     <br>
     <br>
     <%= link_to "Add a Job", new_job_path if session[:user_id].present? %>

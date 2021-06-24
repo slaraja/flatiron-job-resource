@@ -3,6 +3,8 @@
 <% @jobs.each do |job| %> 
 <%= link_to job.title, job_path(job.id) %><br>
 
+<%= button_to "Delete Job", job, method: :delete %>
+
 <% end %>
 
 
