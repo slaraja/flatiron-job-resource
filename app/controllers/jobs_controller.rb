@@ -18,6 +18,7 @@ class JobsController < ApplicationController
         @job.user_id = session[:user_id] #refactor
         #if it reloads, we want it to re-render the information that has been added so far
         if @job.save
+            #retuns same value as valid
             # session[:user_id] = @job.id
             #don't need to store the job id in the session
             redirect_to job_path(@job)
