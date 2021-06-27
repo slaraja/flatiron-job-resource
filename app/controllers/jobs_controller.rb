@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+    #before action?
     
     def index
         redirect_if_not_logged_in 
@@ -56,10 +57,10 @@ class JobsController < ApplicationController
         redirect_to job_path(@job)
     end
 
-    def destroy
-        Job.find_by_id(params[:id]).destroy
-        redirect_to jobs_path
-    end
+    # def destroy
+    #     Job.find_by_id(params[:id]).destroy
+    #     redirect_to jobs_path
+    # end
      
 
     private
