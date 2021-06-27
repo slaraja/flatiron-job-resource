@@ -28,9 +28,6 @@
     <%= link_to "Edit a Job", edit_job_path if session[:user_id].present? %>
     <br>
     <br> 
-    <%= link_to "Delete a Job", edit_job_path if session[:user_id].present? %>
-    <br>
-    <br>
     <%= link_to "See Company List", companies_path if session[:user_id].present? %>
     <br>
     <br>

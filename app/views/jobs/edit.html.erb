@@ -15,7 +15,7 @@
   <br>
   <br>
 
-    <p> Select a company from the list, or skip to the next section to add a new company. </p>
+    <p> Choose a company from the list, or skip to the next section to add a new company. </p>
   <div>
   <%= f.collection_select :company_id, Company.all, :id, :name %>
    <br>
@@ -24,13 +24,13 @@
 
     <p> If you do not see the company on the dropdown list above, add a new company here. </p>
   <div>
-  <%= f.fields_for :company do |attributes| %>
-    <%= attributes.label :name %>
-    <%= attributes.text_field :name %>
+  <%= f.fields_for :company do |company_attributes| %>
+    <%= company_attributes.label :name %>
+    <%= company_attributes.text_field :name %>
     <br>
     <br>
-    <%= attributes.label :location %>
-    <%= attributes.text_field :location %>
+    <%= company_attributes.label :location %>
+    <%= company_attributes.text_field :location %>
 <% end %>
     <br>
     <br>
