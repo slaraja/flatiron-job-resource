@@ -9,7 +9,7 @@ class JobsController < ApplicationController
     def new
        redirect_if_not_logged_in 
        @job = Job.new 
-       @job.build_company #flipped because it's a belongs to
+       @job.build_company 
        #put it in new because we're not doing it in edit
     end
 
@@ -69,5 +69,6 @@ class JobsController < ApplicationController
         params.require(:job).permit(:title, :level, :link, :company_id, company_attributes: [:name, :location])
         #company_attributes comes from accepts_nested_attributes in model
     end
+ 
 
 end
