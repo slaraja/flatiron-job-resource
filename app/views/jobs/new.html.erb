@@ -17,7 +17,7 @@
 
     <p> Select a company from the list, or skip to the next section to add a new company. </p>
   <div>
-  <%= f.collection_select :company_id, Company.all, :id, :name %>
+  <%= f.collection_select :company_id, Company.all, :id, :name, prompt: true %>
    <br>
   <br>
     <div>

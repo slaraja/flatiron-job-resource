@@ -16,7 +16,7 @@ class JobsController < ApplicationController
     def create
         redirect_if_not_logged_in 
         @job = Job.new(job_params)
-        @job.user_id = session[:user_id] #refactor
+        # @job.user_id = session[:user_id] 
         #if it reloads, we want it to re-render the information that has been added so far
         if @job.save
             #retuns same value as valid
@@ -62,7 +62,6 @@ class JobsController < ApplicationController
     #     redirect_to jobs_path
     # end
      
-
     private
 
     def job_params
