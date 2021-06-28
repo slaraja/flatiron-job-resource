@@ -10,7 +10,8 @@ class JobsController < ApplicationController
        redirect_if_not_logged_in 
        @job = Job.new 
        @job.build_company 
-       #put it in new because we're not doing it in edit
+    #    @job.build_comment
+       #put build it in new because we're not doing it in edit
     end
 
     def create

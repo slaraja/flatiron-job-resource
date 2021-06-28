@@ -35,15 +35,7 @@
     <br>
 <% end %>
 
-    <p> Add a comment about the job. </p>
-  <div>
-  <%= f.fields_for :comment do |comm| %>
-    <%= comm.label :content %>
-    <%= comm.text_field :content %>
-<% end %>
 
-    <br>
-    <br>
 <%= f.submit "Add a Job" %>
 
 <% end %>
