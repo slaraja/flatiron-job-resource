@@ -28,6 +28,10 @@ class CommentsController < ApplicationController
       @comments = Comment.all
     end
 
+    def show
+      @comment = Comment.find_by_id(params[:id])
+    end
+
   def comment_params
       params.require(:comment).permit(:content, :job_id)
   end
