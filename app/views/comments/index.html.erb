@@ -1,1 +1,5 @@
 <h1> Comments Index Page </h1>
+
+<% @comments.each do |comment| %> 
+<%= link_to comment.content, job_path(job.id) %> 
+<br>
