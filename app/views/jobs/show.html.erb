@@ -8,7 +8,8 @@
 <h3>Level: <%= @job.level %> </h3>
 <h3>Link: <%= @job.link %> </h3>
 <%= link_to "Edit Job Details", edit_job_path if session[:user_id].present? %>
-<%= link_to "Add a Comment", new_job_comment_path(@job) if session[:user_id].present? %>
+<%= link_to "See Comments", comments_path %>
+<%= link_to "Add a Comment", new_job_comment_path(@job) %>
 
 
 
