@@ -13,9 +13,10 @@ class CommentsController < ApplicationController
       redirect_if_not_logged_in 
       @comment = Comment.new(comment_params)
       @comment.user_id = session[:user_id] 
+      # @comment = current_user.comments.build(comment_params)
       #if it reloads, we want it to re-render the information that has been added so far
       if @comment.save
-          #retuns same value as valid
+          #retuns same value as valid. automatically checks belongs to
           # session[:user_id] = @job.id
           #don't need to store the job id in the session
           redirect_to comment_path(@comment)
