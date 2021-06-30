@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   delete '/jobs' => 'jobs#destroy'
   #don't need a post signup because resources has it covered, and users don't see the URL
+
+  get '/auth/:provider/callback' => 'sessions#google'
   
  
   resources :comments

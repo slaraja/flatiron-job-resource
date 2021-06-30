@@ -26,6 +26,7 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+#fixes the csrf vulnerabilities that are a part of the omniauth gem
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

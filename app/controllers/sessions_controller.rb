@@ -21,6 +21,16 @@ class SessionsController < ApplicationController
             redirect_to login_path
         end
     end
+
+    def google
+        user = User.from_omniauth(request.env['omniauth.auth']
+            if user.valid?
+                session[:user_id] = user.id
+                redirect to user_path(user)
+            else
+                redirect_to '/login'
+            end
+    end
     
     def destroy
         session.delete(:user_id)
