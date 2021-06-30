@@ -13,11 +13,11 @@ class User < ApplicationRecord
     #validates password true
 
     def self.from_omniauth(response)
-        User.find_or_create_by(uid: response[:uid], provider: response[:provider])
-        u.username = response[:info][:name]
-        u.email = response[:info][:email]
-        u.password = SecureRandom.hex(15)
-        
+        User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |user|
+        user.username = response[:info][:name]
+        user.email = response[:info][:email]
+        user.password = SecureRandom.hex(15)
+        end
     end
 
 end
