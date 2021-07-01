@@ -1,5 +1,7 @@
 <h1> Add a Job </h1>
 
+<%= render partial: "layouts/error", locals: {obj: @job} %>
+
 <%= form_for(@job) do |f| %>
 
  <%= f.label :title %>
