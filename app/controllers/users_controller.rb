@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     end
 
     def create
-        byebug
         @user = User.new(user_params)
         #if it reloads, we want it to re-render the information that has been added so far
         if @user.save

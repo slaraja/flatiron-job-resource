@@ -12,6 +12,9 @@
 <%= link_to "See Comments About This Job", job_comments_path(@job) %>
 <%= link_to "Add a Comment", new_job_comment_path(@job) %>
 
+<%= render 'layouts/nav_logged_in' if current_user %>
+
+
 
 
 
