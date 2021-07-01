@@ -1,0 +1,13 @@
+  <div> 
+    <h2> Menu <h2> 
+    <%= link_to "See Job List", jobs_path if session[:user_id].present? %>
+    <br>
+    <br>
+    <%= link_to "Add a Job", new_job_path if session[:user_id].present? %>
+    <br>
+    <br> 
+    <%= link_to "See Company List", companies_path if session[:user_id].present? %>
+    <br>
+    <br>
+    <%= link_to "Log Out", logout_path, method: :delete if session[:user_id].present? %>
+  <div>
