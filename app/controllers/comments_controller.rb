@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  before_action :redirect_if_not_logged_in
 
     def new
         if @job = Job.find_by_id(params[:job_id])
@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
     end
 
     def create
-      redirect_if_not_logged_in 
       @comment = Comment.new(comment_params)
       @comment.user_id = session[:user_id] 
       # @comment = current_user.comments.build(comment_params)
