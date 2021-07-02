@@ -1,7 +1,8 @@
 <h1> Company List </h1>
 
 <% @companies.each do |company| %> 
-<%= link_to company.name, company_path(company.id) %><br>
+<%= link_to company.name, company_path(company.id) %> - <%= company.jobs.size %> jobs posted </h3>
+<br>
 <% end %>
 
 <%= render 'layouts/nav_logged_in' %>

@@ -9,5 +9,7 @@ class Job < ApplicationRecord
 
   validates :title, presence: true
 
-  
+  scope :alpha, -> { order(:title) }
+
+
 end
