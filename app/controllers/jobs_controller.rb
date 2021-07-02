@@ -2,12 +2,10 @@ class JobsController < ApplicationController
     before_action :redirect_if_not_logged_in
     
     def index
-        redirect_if_not_logged_in 
         @jobs = Job.all
     end
 
     def new
-       redirect_if_not_logged_in 
        @job = Job.new 
        @job.build_company 
     #    @job.build_comment
@@ -15,7 +13,6 @@ class JobsController < ApplicationController
     end
 
     def create
-        redirect_if_not_logged_in 
         @job = Job.new(job_params)
         @job.user_id = session[:user_id] 
         #if it reloads, we want it to re-render the information that has been added so far
@@ -30,14 +27,12 @@ class JobsController < ApplicationController
     end
 
     def show
-        redirect_if_not_logged_in 
         @job = Job.find_by_id(params[:id])
         #redirect to somewhere else if someone types something else into URL
         #  redirect_to '/' if !@user
     end
 
     def edit
-        redirect_if_not_logged_in 
         @job = Job.find_by_id(params[:id])
     end
     #    #find the job by id
