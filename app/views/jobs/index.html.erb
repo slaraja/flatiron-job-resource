@@ -1,5 +1,6 @@
 <h1> Jobs List </h1>
 
+
 <% @jobs.each do |job| %> 
 <%= link_to job.title, job_path(job.id) %> - <%= job.company.name %> 
 
@@ -7,7 +8,7 @@
 
 <% end %>
 
-<%= render 'layouts/nav_logged_in' if @current_user %>
+<%= render 'layouts/nav_logged_in' %>
 
 
 
