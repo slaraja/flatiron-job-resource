@@ -1,48 +1,9 @@
 <h1> Add a Job </h1>
 
-<%= render partial: "layouts/errors", locals: {obj: @job} %>
-
-<%= form_for(@job) do |f| %>
-
- <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <br>
-  <%= f.label :level %>
-  <%= f.text_field :level %>
-  <br>
-  <br>
-  <%= f.label :link %>
-  <%= f.text_field :link %>
-  <br>
-  <br>
-
-    <p> Select a company from the list, or skip to the next section to add a new company. </p>
-  <div>
-  <%= f.collection_select :company_id, Company.all, :id, :name, prompt: true %>
-   <br>
-  <br>
-    <div>
-
-    <p> If you do not see the company on the dropdown list above, add a new company here. </p>
-  <div>
-  <%= f.fields_for :company do |c| %>
-    <%= c.label :name %>
-    <%= c.text_field :name %>
-    <br>
-    <br>
-    <%= c.label :location %>
-    <%= c.text_field :location %>
-    <br>
-    <br>
-<% end %>
+<%= render partial: "form" %>
 
 
-<%= f.submit "Add a Job" %>
 
-<% end %>
-
-<%= render 'layouts/nav_logged_in' %>
 
 
 
