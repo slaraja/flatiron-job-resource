@@ -26,7 +26,7 @@
   <div>
   <%= f.fields_for :company do |c| %>
     <%= c.label :name %>
-    <%= c.text_field :name %>
+    <%= c.text_field :name, value: nil %>
     <br>
     <br>
     <%= c.label :location %>
