@@ -3,13 +3,15 @@ class SessionsController < ApplicationController
     def index
         # if @current_user
         #     redirect_to user_path(@user)
-        # else
-        #     render index
         # end
     end
 
     def new
+        # if @current_user
+        #     redirect_to user_path(@user)
+        # else
         @user = User.new
+        # end 
     end
 
     def create
