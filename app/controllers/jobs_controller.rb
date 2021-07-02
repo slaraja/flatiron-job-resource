@@ -35,17 +35,6 @@ class JobsController < ApplicationController
     def edit
         @job = Job.find_by_id(params[:id])
     end
-    #    #find the job by id
-
-    # #    
-    #    @job = Job.find_by(id: params[:id])
-
-    #     #if current user is the owner, then edit the job
-    #     if @job.save
-    #         redirect_to job_path(@job)
-    #     else           
-    #         render :new
-    #     end
 
     def update
         @job = Job.find_by_id(params[:id])
