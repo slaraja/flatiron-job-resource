@@ -1,10 +1,10 @@
 <h1> Comment submitted by: <%= @comment.user.first_name %> </h1>
 
 <%= @comment.content %>
-<br>
-<br>
-<%= link_to "Go Back to Job Details", job_path(@comment) %>
 
-<%= render 'layouts/nav_logged_in' %>
+<%= render 'comment_nav' %>
+
+
+
 
 
