@@ -1,5 +1,4 @@
-  <div> 
-    <h2> Main Menu <h2> 
+  
     <%= link_to "See Job List", jobs_path if session[:user_id].present? %>
     <br>
     <br>
@@ -10,4 +9,3 @@
     <br>
     <br>
     <%= link_to "Log Out", logout_path, method: :delete if session[:user_id].present? %>
-  <div>
