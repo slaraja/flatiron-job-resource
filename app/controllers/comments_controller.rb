@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
       #no need to nest show because comment can only belong to one job
       #comment out line below?
       @comment = Comment.find_by_id(params[:id])
-
+      # @comments = @job.comments
     end
 
   def comment_params
