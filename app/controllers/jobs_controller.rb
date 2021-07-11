@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
     before_action :redirect_if_not_logged_in
+    before_action :set_job, only: [:edit, :udpate]
     
     def index
         @jobs = Job.all
@@ -9,8 +10,7 @@ class JobsController < ApplicationController
     def new
        @job = Job.new 
        @job.build_company 
-    #    @job.build_comment
-       #put build it in new because we're not doing it in edit
+       #put build in new because we're not doing it in edit
     end
 
     def create
@@ -19,8 +19,6 @@ class JobsController < ApplicationController
         #if it reloads, we want it to re-render the information that has been added so far
         if @job.save
             #retuns same value as valid
-            # session[:user_id] = @job.id
-            #don't need to store the job id in the session
             redirect_to job_path(@job)
         else           
             render :new
@@ -28,17 +26,17 @@ class JobsController < ApplicationController
     end
 
     def show
-        @job = Job.find_by_id(params[:id])
-        #redirect to somewhere else if someone types something else into URL
-        #  redirect_to '/' if !@user
+        if 
+            @job = Job.find_by_id(params[:id])
+        else 
+            redirect_to '/'
+        end 
     end
 
     def edit
-        @job = Job.find_by_id(params[:id])
     end
 
     def update
-        @job = Job.find_by_id(params[:id])
         @job.update(job_params)
         redirect_to job_path(@job)
     end
@@ -48,6 +46,10 @@ class JobsController < ApplicationController
     def job_params
         params.require(:job).permit(:title, :level, :link, :company_id, company_attributes: [:name, :location])
         #company_attributes comes from accepts_nested_attributes in model
+    end
+
+    def set_job
+        @job = Job.find_by_id(params[:id])
     end
  
 
