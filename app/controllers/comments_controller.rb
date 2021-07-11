@@ -24,15 +24,15 @@ class CommentsController < ApplicationController
     end
 
     def index
-      @comments = Comment.all
+      if params[:job_id]
+          @comments = Job.find(params[:job_id]).comments
+      else
+        @comments = Comment.all
+      end 
     end
 
-
     def show
-      #no need to nest show because comment can only belong to one job
-      #comment out line below?
       @comment = Comment.find_by_id(params[:id])
-      # @comments = @job.comments
     end
 
   def comment_params
