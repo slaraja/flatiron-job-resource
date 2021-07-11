@@ -2,13 +2,13 @@
 
 ## Description
 
-A job resource for Flatiron School students and alumni.
+A job resource app for Flatiron School students and alumni.
 
 ## Application Instructions
-- User can view a list of jobs and associated companies.
+- User can view and edit list of jobs and associated companies.
 - User can add jobs.
 - User can add companies.
-- User can add and comments about specific jobs and edit the comments.
+- User can view comments and add comments about specific jobs.
 
 ## Video Demo
 
