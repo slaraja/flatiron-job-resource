@@ -2,8 +2,10 @@ class CommentsController < ApplicationController
   before_action :redirect_if_not_logged_in
 
     def new
-        if @job = Job.find_by_id(params[:job_id])
+        if @job = Job.find_by_id(params[:job_id]) 
+          #must be job id to make it nested
             @comment = @job.comments.build
+            #use build so the comment already knows which job is assoc
           else
             @comment = Comment.new
           end
