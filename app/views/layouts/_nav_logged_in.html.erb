@@ -10,3 +10,6 @@
     <br>
     <br>
     <%= link_to "Log Out", logout_path, method: :delete if session[:user_id].present? %>
+    <br>
+    <br>
+  <i>You are logged in with the following email:  <%= current_user.email %><i>
