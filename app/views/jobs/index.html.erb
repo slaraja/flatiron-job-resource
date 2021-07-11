@@ -1,5 +1,5 @@
 <h1> Jobs List </h1>
-
+<h2> Click on a job below to see more details and comment on the job. </h2>
 
 <% @jobs.each do |job| %> 
 <%= link_to job.title, job_path(job.id) %> - <%= job.company.name %> 
