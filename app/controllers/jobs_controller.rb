@@ -26,8 +26,7 @@ class JobsController < ApplicationController
     end
 
     def show
-        if 
-            @job = Job.find_by_id(params[:id])
+        if set_job
         else 
             redirect_to '/'
         end 
