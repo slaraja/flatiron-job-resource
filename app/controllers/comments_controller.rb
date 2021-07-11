@@ -18,8 +18,7 @@ class CommentsController < ApplicationController
       #if it reloads, we want it to re-render the information that has been added so far
       if @comment.save
           #retuns same value as valid. automatically checks belongs to
-          # session[:user_id] = @job.id
-          #don't need to store the job id in the session
+
           redirect_to comment_path(@comment)
       else           
           render :new
@@ -30,7 +29,10 @@ class CommentsController < ApplicationController
       @comments = Comment.all
     end
 
+
     def show
+      #no need to nest show because comment can only belong to one job
+      #comment out line below?
       @comment = Comment.find_by_id(params[:id])
 
     end
