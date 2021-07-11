@@ -1,17 +1,10 @@
 class SessionsController < ApplicationController
 
     def index
-        # if @current_user
-        #     redirect_to user_path(@user)
-        # end
     end
 
     def new
-        # if @current_user
-        #     redirect_to user_path(@user)
-        # else
         @user = User.new
-        # end 
     end
 
     def create
@@ -20,7 +13,6 @@ class SessionsController < ApplicationController
         #did we find the user and did they enter the correct password?
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            #set the user id in the session
             redirect_to user_path(@user)
         else
             flash[:alert] = "Please try again. Your login details are incorrect."
@@ -40,7 +32,6 @@ class SessionsController < ApplicationController
     
     def destroy
         session.delete(:user_id)
-        # session.clear
         redirect_to '/'
     end
 end

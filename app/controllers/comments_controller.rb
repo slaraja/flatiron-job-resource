@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
 
     def new
         if @job = Job.find_by_id(params[:job_id]) 
-          #must be job id to make it nested
             @comment = @job.comments.build
             #use build so the comment already knows which job is assoc
           else
@@ -18,7 +17,6 @@ class CommentsController < ApplicationController
       #if it reloads, we want it to re-render the information that has been added so far
       if @comment.save
           #retuns same value as valid. automatically checks belongs to
-
           redirect_to comment_path(@comment)
       else           
           render :new
