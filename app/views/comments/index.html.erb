@@ -1,8 +1,10 @@
-<h1> Comments About All Jobs </h1>
+<h1> Comments </h1>
+
 
 <% @comments.each do |comment| %>
-<%= link_to comment.content, comment_path(comment)%> 
+<li><%= link_to comment.content, comment_path(comment)%></li>
 <% end %>
+
 
 <%= render 'layouts/nav_logged_in' %>
 
