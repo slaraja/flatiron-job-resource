@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
     end
 
     def create
-        #does the user exist in the system
         @user = User.find_by(username: params[:user][:username])
         #did we find the user and did they enter the correct password?
         if @user && @user.authenticate(params[:user][:password])
