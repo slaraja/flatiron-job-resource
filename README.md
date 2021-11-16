@@ -12,7 +12,7 @@ A job resource app for Flatiron School students and alumni.
 
 ## Video Demo
 
-https://drive.google.com/drive/u/0/folders/13SDuZkzVG7rQS7Oo1ykmD2i1-6O7W54i
+https://youtu.be/TntzY_r7Xs8
 
 ## Install Instructions
 
